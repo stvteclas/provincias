@@ -5,10 +5,8 @@ public class Final2 {
  private Scanner teclado;
  private String[] provincia;
  private int[] temp;
- private int[] mayor;
- private int valor=0;
+ private int mayor, menor;
  private double promedio;
- private int suma1,suma2,suma3;
  
  public void cargar()
  {
@@ -41,33 +39,33 @@ public void mayor()
 	
 	for (int f=0;f<provincia.length;f++)
 	 {
-			if(temp[f]>=suma2)
+			if(temp[f]>=mayor)
 			{
-				suma2=temp[f];
-				suma1=suma2;
+				mayor=temp[f];
 			}
 	 }
 	for (int f=0;f<provincia.length;f++)
 	{
-		if (temp[f]==suma2)
+		if (temp[f]==mayor)
 		{
 			System.out.println("La provincia con mayor temperatura es:" +provincia[f]);
 		}
 
 	}
+	menor= mayor;
 }
 public void menor()
 {
 	for (int f=0;f<provincia.length;f++)
 	{
-		if (temp[f]<suma1)
+		if (temp[f]<menor)
 		{
-			suma3=temp[f];
+			menor=temp[f];
 		}
 	}
 	for (int f=0;f<provincia.length;f++)
 		{
-			if (temp[f]==suma3)
+			if (temp[f]==menor)
 			{
 				System.out.println("La provincia con menor temperatura es:" +provincia[f]);
 			}	
