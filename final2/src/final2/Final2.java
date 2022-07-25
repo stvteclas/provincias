@@ -22,6 +22,7 @@ public class Final2 {
 		 provincia[f]=teclado.next();
 		 System.out.println("ingrese temperatura promedio diaria");
 		 temp[f]= teclado.nextInt();
+		 menor= temp[f];
 	 }
  }
  public void promedio()
@@ -36,41 +37,25 @@ public class Final2 {
  }
 public void mayor()
 {
-	
+	int s=0,m=0;
 	for (int f=0;f<provincia.length;f++)
 	 {
 			if(temp[f]>=mayor)
 			{
 				mayor=temp[f];
+				s=f;
+			}
+			if (temp[f]<= menor)
+			{
+				menor=temp[f];
+				m=f;
+
 			}
 	 }
-	for (int f=0;f<provincia.length;f++)
-	{
-		if (temp[f]==mayor)
-		{
-			System.out.println("La provincia con mayor temperatura es:" +provincia[f]);
-		}
+	 System.out.println("La provincia con mayor temperatura es:" +provincia[s]);
+	 System.out.println("La provincia con menor temperatura es:" +provincia[m]);
+}
 
-	}
-	menor= mayor;
-}
-public void menor()
-{
-	for (int f=0;f<provincia.length;f++)
-	{
-		if (temp[f]<menor)
-		{
-			menor=temp[f];
-		}
-	}
-	for (int f=0;f<provincia.length;f++)
-		{
-			if (temp[f]==menor)
-			{
-				System.out.println("La provincia con menor temperatura es:" +provincia[f]);
-			}	
-		}
-}
  public static void main(String[] ar)
 	{
 		Final2 pv; 
@@ -78,9 +63,9 @@ public void menor()
 		pv.cargar();
 		pv.promedio();
 		pv.mayor();
-		pv.menor();
 		
 	}
 	
 	 
  }
+ 
